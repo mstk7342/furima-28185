@@ -17,20 +17,20 @@
 ### Association
 
 - has_many :items
-- has_many :buyer
+- has_many :buyers
 
 ## item テーブル
 
-| Column         | Type    | Options                        |
-| name           | string  | null: false                    |
-| price          | string  | null: false                    |
-| status         | string  | null: false                    |
-| shipping_cost  | string  | null: false                    |
-| shipping_days  | string  | null: false                    |
-| prefectures    | string  | null: false                    |
-| category_id    | string  | null: false                    |
-| description    | text    | null: false                    |
-| user_id        | integer | null: false, foreign_key: true |
+| Column            | Type    | Options                        |
+| name              | string  | null: false                    |
+| price             | integer | null: false                    |
+| status_id         | integer | null: false                    |
+| shipping_cost_id  | integer | null: false                    |
+| shipping_days_id  | integer | null: false                    |
+| prefectures_id    | integer | null: false                    |
+| category_id       | string  | null: false                    |
+| description       | text    | null: false                    |
+| user_id           | integer | null: false, foreign_key: true |
 
 ### Association
 
