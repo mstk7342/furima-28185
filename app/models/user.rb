@@ -7,9 +7,9 @@ class User < ApplicationRecord
   has_many :items
   # has_many :buyers
 
-  NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/
-  NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
+  NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
 
   with_options presence: true, format: { with: NAME_REGEX, message: 'is invalid. Input full-width characters.' } do
     validates :family_name
@@ -23,5 +23,5 @@ class User < ApplicationRecord
     validates :birth_day
     validates :nickname
   end
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'Password Include both letters and numbers' 
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'Password Include both letters and numbers'
 end
