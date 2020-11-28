@@ -10,6 +10,10 @@ RSpec.describe Item, type: :model do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@item).to be_valid
       end
+      it '価格が300円〜9999999円' do
+        @item.price = 1000
+        expect(@item).to be_valid
+      end
     end
 
     context '商品登録ができないとき' do
@@ -57,6 +61,16 @@ RSpec.describe Item, type: :model do
         @item.price = '１０００'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is invalid. Input half-width characters.')
+      end
+      it "価格が299円以下の場合は登録できない" do
+        @item.price = '299'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is out of setting range')
+      end
+      it "価格が1000万円以上の場合、登録できない" do
+      @item.price = '10000000'
+      @item.valid?
+      expect(@item.errors.full_messages).to include('Price is out of setting range')
       end
     end
   end

@@ -7,7 +7,7 @@ FactoryBot.define do
     shopping_cost_id  { 2 }
     shopping_days_id  { 2 }
     prefectures_id    { 2 }
-    price { 500 }
+    price { 1000 }
     association :user
 
     after(:build) do |item|
