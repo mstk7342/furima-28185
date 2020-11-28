@@ -63,3 +63,10 @@ gem 'devise'
 
 gem 'pry-rails'
 
+gem 'mini_magick'
+
+gem 'active_hash'
+
+group :development do
+  gem 'rubocop', require: false
+end
