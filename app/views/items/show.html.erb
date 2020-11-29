@@ -21,7 +21,7 @@
        ¥ <%= @items.price%>
       </span>
       <span class="item-postage">
-        <%= @items.shopping_cost_id %>
+        <%= @items.shopping_cost.name %>
       </span>
     </div>
 
@@ -48,7 +48,7 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @items.name %></td>
+          <td class="detail-value"><%= @items.user.nickname %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
@@ -107,7 +107,7 @@
       後ろの商品 ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <a href="#" class='another-item'><%= @items.category.name %>をもっと見る</a>
 </div>
 
 <%= render "shared/footer" %>
