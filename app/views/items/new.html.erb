@@ -76,12 +76,12 @@
           発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:prefectures_id, Prefecture.all, :id, :name, {}, {class:"prefecture", id:"item-prefecture"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"prefecture", id:"item-prefecture"}) %>
         <div class="weight-bold-text">
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:shopping_days_id, ShoppingDay.all, :id, :name, {}, {class:"shopping-day", id:"item-shopping-day"}) %>
+        <%= f.collection_select(:shopping_day_id, ShoppingDay.all, :id, :name, {}, {class:"shopping-day", id:"item-shopping-day"}) %>
       </div>
     </div>
     <%# /配送について %>

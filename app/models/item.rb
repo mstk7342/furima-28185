@@ -12,9 +12,9 @@ class Item < ApplicationRecord
   with_options numericality: { other_than: 1, message: "can't be blank" } do
     validates :category_id
     validates :status_id
-    validates :prefectures_id
+    validates :prefecture_id
     validates :shopping_cost_id
-    validates :shopping_days_id
+    validates :shopping_day_id
   end
 
   with_options presence: true do
