@@ -18,15 +18,14 @@ class Item < ApplicationRecord
   end
 
   with_options presence: true do
-    validates :name
-    validates :description
+    validates :name, length: { maximum: 40 }
+    validates :description, length: { maximum: 1000 }
     validates :image
   end
 
   validates :price, numericality: { only_integer: true, message: 'is invalid. Input half-width characters.' }
 
-  validates :name, presence: true, length: { maximum: 40 }
-  validates :description, presence: true, length: { maximum: 1000 }
+
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is out of setting range' }
 
 end
