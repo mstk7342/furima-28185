@@ -11,6 +11,7 @@ class BuyerDestination
     validates :phone_number, length: { minimum: 10, maximum:11, message: "Phone_number is too long (maximum is 11 characters)" }
     validates :user_id
     validates :item_id
+    validates :token
   end
 
   with_options numericality: { other_than: 1, message: "can't be blank" } do
@@ -24,3 +25,6 @@ class BuyerDestination
   end
     
 end
+
+
+  

@@ -129,22 +129,36 @@
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <li class='list'>
         <%= link_to item_path(item.id), method: :get do %>
-        <div class='item-img-content'>
-          <%= image_tag item.image, class: "item-img" %>
+          <div class='item-img-content'>
+            <%= image_tag item.image, class: "item-img" %>
 
-          <%# 商品が売れていればsold outを表示しましょう %>
-          <% if item.buyer != nil %>
-          <div class='sold-out'>
-            <span>Sold Out!!</span>
+            <%# 商品が売れていればsold outを表示しましょう %>
+            <% if item.buyer != nil %>
+            <div class='sold-out'>
+              <span>Sold Out!!</span>
+            </div>
+            
+            <% end %>
+
           </div>
-          <% end %>
-
-        </div>
  
         <% end %>
+        <h2 class="name">
+         <%= item.name %>
+        </h2>
+        <div class='item-price'>
+          <span> ¥ <%= item.price %> <br>
+          <%= item.shopping_cost.name %><br>
+          </span>
+           
+          <div class='star-btn'>
+            <%= image_tag "star.png", class:"star-icon" %>
+            <span class='star-count'>0</span>
+          </div>
+
+        </div> 
       </li>
       <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-
 
     <% end %>
       
