@@ -22,7 +22,6 @@ const pay = () => {
         renderDom.insertAdjacentHTML("beforeend",tokenObj);
         // console.log("OK")
       } // else{console.log("NG")}
-
       document.getElementById("card-number").removeAttribute("name");
       document.getElementById("card-cvc").removeAttribute("name");
       document.getElementById("card-exp-month").removeAttribute("name");
